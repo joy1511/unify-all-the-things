@@ -45,7 +45,7 @@ const Sidebar = () => {
         <Button
           variant="outline"
           className="w-full"
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate("/")}
         >
           <Home className="w-5 h-5 mr-2" />
           Back to Home
