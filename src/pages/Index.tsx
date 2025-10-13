@@ -10,7 +10,12 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-6 max-w-7xl mx-auto">
-        <h1 className="text-2xl font-bold text-primary">Maitri</h1>
+        <div className="relative">
+          <h1 className="text-2xl font-bold text-primary relative z-10">Maitri</h1>
+          <span className="absolute top-1/2 left-0 -translate-y-1/2 text-5xl font-bold text-hero/10 -z-10 tracking-wider">
+            ISRO
+          </span>
+        </div>
         <div className="flex gap-4">
           <Button variant="ghost" onClick={() => navigate("/about")}>
             About

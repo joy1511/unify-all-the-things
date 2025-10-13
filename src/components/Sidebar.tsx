@@ -17,7 +17,12 @@ const Sidebar = () => {
   return (
     <div className="w-64 bg-sidebar-background border-r border-sidebar-border flex flex-col">
       <div className="p-6 border-b border-sidebar-border">
-        <h2 className="text-2xl font-bold text-primary">Maitri</h2>
+        <div className="relative">
+          <h2 className="text-2xl font-bold text-primary relative z-10">Maitri</h2>
+          <span className="absolute top-1/2 left-0 -translate-y-1/2 text-4xl font-bold text-hero/10 -z-10 tracking-wider">
+            ISRO
+          </span>
+        </div>
         <p className="text-sm text-muted-foreground mt-1">Your Space Companion</p>
       </div>
 
