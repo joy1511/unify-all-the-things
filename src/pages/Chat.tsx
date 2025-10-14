@@ -2,9 +2,19 @@ import { useState } from "react";
 import { Video, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Sidebar from "@/components/Sidebar";
+import { useToast } from "@/hooks/use-toast";
 
 const Chat = () => {
   const [activeTab, setActiveTab] = useState<"video" | "text">("video");
+  const { toast } = useToast();
+
+  const handleStartSession = () => {
+    toast({
+      title: activeTab === "video" ? "Video Call Starting" : "Chat Starting",
+      description: "Connecting to Maitri AI...",
+    });
+    // Add your actual video/chat implementation here
+  };
 
   return (
     <div className="flex h-screen bg-background">
@@ -46,7 +56,11 @@ const Chat = () => {
         <div className="flex-1 flex items-center justify-center p-8">
           <div className="text-center space-y-8 max-w-2xl">
             <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-primary/10 border-2 border-primary">
-              <Video className="w-16 h-16 text-primary" />
+              {activeTab === "video" ? (
+                <Video className="w-16 h-16 text-primary" />
+              ) : (
+                <MessageSquare className="w-16 h-16 text-primary" />
+              )}
             </div>
             
             <div className="space-y-3">
@@ -63,8 +77,13 @@ const Chat = () => {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+              onClick={handleStartSession}
             >
-              <Video className="w-5 h-5 mr-2" />
+              {activeTab === "video" ? (
+                <Video className="w-5 h-5 mr-2" />
+              ) : (
+                <MessageSquare className="w-5 h-5 mr-2" />
+              )}
               {activeTab === "video" ? "Start Video Call" : "Start Chat"}
             </Button>
 

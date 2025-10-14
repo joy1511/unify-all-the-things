@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import FeaturesSection from "@/components/FeaturesSection";
 import spaceHeroBg from "@/assets/space-hero-bg.jpg";
+import maitriLogo from "@/assets/maitri-logo.svg";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -10,11 +11,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-6 max-w-7xl mx-auto">
-        <div className="relative">
-          <h1 className="text-2xl font-bold text-primary relative z-10">Maitri</h1>
-          <span className="absolute top-1/2 left-0 -translate-y-1/2 text-5xl font-bold text-hero/10 -z-10 tracking-wider">
-            ISRO
-          </span>
+        <div className="flex items-center gap-3">
+          <img src={maitriLogo} alt="Maitri" className="h-12" />
+          <span className="text-2xl text-primary">Maitri</span>
         </div>
         <div className="flex gap-4">
           <Button variant="ghost" onClick={() => navigate("/about")}>
@@ -36,12 +35,11 @@ const Index = () => {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${spaceHeroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="text-center space-y-8 max-w-4xl">
-          <h1 className="text-8xl md:text-9xl font-bold text-hero tracking-wider">
-            MAITRI
-          </h1>
+          <img src={maitriLogo} alt="Maitri" className="h-32 mx-auto" />
 
           <h2 className="text-5xl md:text-6xl font-light text-primary">
             Your Companion
