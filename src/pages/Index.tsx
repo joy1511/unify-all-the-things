@@ -11,8 +11,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between p-6 max-w-7xl mx-auto">
-        <div className="flex items-center gap-3">
-          <img src={maitriLogo} alt="Maitri" className="h-12" />
+        <div className="flex items-center">
           <span className="text-2xl text-primary">Maitri</span>
         </div>
         <div className="flex gap-4">
@@ -39,7 +38,7 @@ const Index = () => {
         }}
       >
         <div className="text-center space-y-8 max-w-4xl">
-          <img src={maitriLogo} alt="Maitri" className="h-32 mx-auto" />
+          <img src={maitriLogo} alt="Maitri" className="h-48 mx-auto" />
 
           <h2 className="text-5xl md:text-6xl font-light text-primary">
             Your Companion
