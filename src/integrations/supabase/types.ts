@@ -14,7 +14,203 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          content: string
+          created_at: string | null
+          emotion_detected: string | null
+          id: string
+          role: string | null
+          sentiment: string | null
+          session_id: string | null
+          user_id: string | null
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          emotion_detected?: string | null
+          id?: string
+          role?: string | null
+          sentiment?: string | null
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          emotion_detected?: string | null
+          id?: string
+          role?: string | null
+          sentiment?: string | null
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_messages_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "chat_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chat_sessions: {
+        Row: {
+          duration_minutes: number | null
+          ended_at: string | null
+          id: string
+          sentiment_score: number | null
+          session_type: string | null
+          started_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          duration_minutes?: number | null
+          ended_at?: string | null
+          id?: string
+          sentiment_score?: number | null
+          session_type?: string | null
+          started_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          duration_minutes?: number | null
+          ended_at?: string | null
+          id?: string
+          sentiment_score?: number | null
+          session_type?: string | null
+          started_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      emergency_alerts: {
+        Row: {
+          alert_level: number | null
+          alert_type: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          resolved_at: string | null
+          status: string | null
+          user_id: string | null
+        }
+        Insert: {
+          alert_level?: number | null
+          alert_type?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          resolved_at?: string | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          alert_level?: number | null
+          alert_type?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          resolved_at?: string | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      health_records: {
+        Row: {
+          blood_pressure_diastolic: number | null
+          blood_pressure_systolic: number | null
+          device_source: string | null
+          heart_rate: number | null
+          id: string
+          notes: string | null
+          oxygen_level: number | null
+          recorded_at: string | null
+          stress_level: number | null
+          user_id: string | null
+        }
+        Insert: {
+          blood_pressure_diastolic?: number | null
+          blood_pressure_systolic?: number | null
+          device_source?: string | null
+          heart_rate?: number | null
+          id?: string
+          notes?: string | null
+          oxygen_level?: number | null
+          recorded_at?: string | null
+          stress_level?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          blood_pressure_diastolic?: number | null
+          blood_pressure_systolic?: number | null
+          device_source?: string | null
+          heart_rate?: number | null
+          id?: string
+          notes?: string | null
+          oxygen_level?: number | null
+          recorded_at?: string | null
+          stress_level?: number | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          full_name: string | null
+          id: string
+          mission_id: string | null
+          rank: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          full_name?: string | null
+          id: string
+          mission_id?: string | null
+          rank?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          full_name?: string | null
+          id?: string
+          mission_id?: string | null
+          rank?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      wellness_activities: {
+        Row: {
+          activity_type: string | null
+          completed_at: string | null
+          duration_seconds: number | null
+          id: string
+          score: number | null
+          user_id: string | null
+        }
+        Insert: {
+          activity_type?: string | null
+          completed_at?: string | null
+          duration_seconds?: number | null
+          id?: string
+          score?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          activity_type?: string | null
+          completed_at?: string | null
+          duration_seconds?: number | null
+          id?: string
+          score?: number | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
